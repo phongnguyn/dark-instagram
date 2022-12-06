@@ -6,7 +6,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         !tab.url.includes("/p/") &&
         !tab.url.includes("/reel/")) {
         const newURL = tab.url.split("?")[0].concat("?theme=dark");
-        console.log("hello world");
+        console.log(newURL);
         chrome.tabs.sendMessage(tabId, {
             type: "unloaded",
             link: newURL,
